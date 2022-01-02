@@ -1,0 +1,822 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost/Institute#"
+     xml:base="http://localhost/Institute"
+     xmlns:p1="hhtp://localhost/Institute#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
+    <owl:Ontology rdf:about="http://localhost/Institute"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/Institute#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#belongsTo">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Teacher_Notes"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#belongsToCentre -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#belongsToCentre">
+        <owl:inverseOf rdf:resource="http://localhost/Institute#hasPerson"/>
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Centre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#createdBy -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#createdBy">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Slides"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasAge -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasAge">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Age"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasArticlePublication -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasArticlePublication">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Article"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasAuthor">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Material"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasBSubject -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasBSubject">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Undergraduate_Student"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Undergraduate_Subject"/>
+        <owl:propertyDisjointWith rdf:resource="http://localhost/Institute#hasMSubject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasBookPublication -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasBookPublication">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasDuration">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Subject"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Duration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasEmail -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasEmail">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Email"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasFirstName -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasFirstName">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasGender">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasLastName -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasLastName">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Last_Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasMSubject -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasMSubject">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Postgraduate_Student"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Postgraduate_Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasMaterial">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Subject_Relation"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasPerson -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasPerson">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Centre"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasSubject -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#hasSubject">
+        <owl:inverseOf rdf:resource="http://localhost/Institute#impartedIn"/>
+        <rdfs:domain rdf:resource="http://localhost/Institute#Course"/>
+        <rdfs:domain rdf:resource="http://localhost/Institute#Subject_Relation"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#impartedBy -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#impartedBy">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Subject"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#impartedIn -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#impartedIn">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Subject"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#listedCourse -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#listedCourse">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Centre"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#pgStudent -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#pgStudent">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Postgraduate_Student"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Postgraduate_Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#subjects -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#subjects">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Student"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Subject_Relation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#takenBy -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#takenBy">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Student_Notes"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost/Institute#ugStudent -->
+
+    <owl:ObjectProperty rdf:about="http://localhost/Institute#ugStudent">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Undergraduate_Student"/>
+        <rdfs:range rdf:resource="http://localhost/Institute#Undergraduate_Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/Institute#durationTime -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#durationTime">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Videos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasCenterName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#hasCenterName">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Centre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasFinal -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#hasFinal">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Subject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasInit -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#hasInit">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Subject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasPublisher -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#hasPublisher">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasTeachingExperience -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#hasTeachingExperience">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Teacher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasTopic -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#hasTopic">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Videos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#hasUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#hasUrl">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Website"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost/Institute#publicationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost/Institute#publicationDate">
+        <rdfs:domain rdf:resource="http://localhost/Institute#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/Institute#Age -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Age">
+        <rdfs:comment>The age is the length of  time a person has lived or a thing has existed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Article -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Article">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Publication"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Book"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Periodical"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Thesis"/>
+        <rdfs:comment>A piece of writing on a particular subject in a newspaper or magazine, or on the internet.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Assistant_professor -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Assistant_professor">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Teacher"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Associate_Professor"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Professor"/>
+        <rdfs:comment>Assistant to the professor.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Associate_Professor -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Associate_Professor">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Teacher"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Professor"/>
+        <rdfs:comment>Secondary professor.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Blog -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Blog">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Website"/>
+        <rdfs:comment>A regular record of your thoughts, opinions, or experiences that you put on the internet for other people to read.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Book -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Book">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Publication"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Periodical"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Thesis"/>
+        <rdfs:comment>A written text that can be published in printed or electronic form</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#BookArticle -->
+
+    <owl:Class rdf:about="http://localhost/Institute#BookArticle">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Article"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#ConferenceArticle"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#JournalArticle"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#WorkshopArticle"/>
+        <rdfs:comment>An article written as a book.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Centre -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Centre">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost/Institute#listedCourse"/>
+                <owl:someValuesFrom rdf:resource="http://localhost/Institute#Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Institution where the teaching takes place.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#ConferenceArticle -->
+
+    <owl:Class rdf:about="http://localhost/Institute#ConferenceArticle">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Article"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#JournalArticle"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#WorkshopArticle"/>
+        <rdfs:comment>An article published as a conference.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Course -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Course">
+        <rdfs:comment>Conjunction of lessons about a subject.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#DoctoralThesis -->
+
+    <owl:Class rdf:about="http://localhost/Institute#DoctoralThesis">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Thesis"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#MastersThesis"/>
+        <rdfs:comment>A thesis made by a PhD student.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Duration -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Duration">
+        <rdfs:comment>The length of time that a subject has.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Email -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Email">
+        <rdfs:comment>Address of a person on one of the systems used to send messages over the internet.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Gender -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Gender">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The physical and/or social condition of being male or female.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Journal -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Journal">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Periodical"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Magazine"/>
+        <rdfs:comment>A serious magazine or newspaper that is published regularly about a particular subject.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#JournalArticle -->
+
+    <owl:Class rdf:about="http://localhost/Institute#JournalArticle">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Article"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#WorkshopArticle"/>
+        <rdfs:comment>An article written as a journal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Last_Name -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Last_Name">
+        <rdfs:comment>Family name of a person.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Magazine -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Magazine">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Periodical"/>
+        <rdfs:comment>A type of thin book with large pages and a paper cover that contains articles and photographs and is published every week or month.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#MastersThesis -->
+
+    <owl:Class rdf:about="http://localhost/Institute#MastersThesis">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Thesis"/>
+        <rdfs:comment>A thesis made by a masters student.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Material -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Material">
+        <rdfs:comment>It is the information produced in various forms to help people to teach and or study.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Name -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Name">
+        <rdfs:comment>The word or words that a person, thing, or place is known by.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Notes -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Notes">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Material"/>
+        <rdfs:comment>Short pieces of writing with explanations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Periodical -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Periodical">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Publication"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Proceedings"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Thesis"/>
+        <rdfs:comment>A magazine or journal, especially on a serious subject, that is published regularly.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Person -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Person">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost/Institute#belongsToCentre"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost/Institute#Centre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost/Institute#hasGender"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost/Institute#Gender"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A man, woman, or child</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Postgraduate_Course -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Postgraduate_Course">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Course"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Undergraduate_Course"/>
+        <rdfs:comment>Specialized course for people who have succesfully obtained a degree.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Postgraduate_Student -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Postgraduate_Student">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Student"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost/Institute#pgStudent"/>
+                <owl:someValuesFrom rdf:resource="http://localhost/Institute#Postgraduate_Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Undergraduate_Student"/>
+        <rdfs:comment>Student that has already obtained a degree.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Postgraduate_Subject -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Postgraduate_Subject">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Subject"/>
+        <rdfs:comment>Subject studied on a postgraduate course.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Proceedings -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Proceedings">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Publication"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Thesis"/>
+        <rdfs:comment>A complete written record of what is said or done during a meeting.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Professor -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Professor">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Teacher"/>
+        <rdfs:comment>Main teacher.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Publication -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Publication">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Material"/>
+        <rdfs:comment>A book, magazine, newspaper, or document in which information or stories are published.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Slides -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Slides">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Material"/>
+        <rdfs:comment>The conjunction of the screens in a presentation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Student -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Student">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Person"/>
+        <owl:disjointWith rdf:resource="http://localhost/Institute#Teacher"/>
+        <rdfs:comment>A person who is learning at a college or university.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Student_Notes -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Student_Notes">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Notes"/>
+        <rdfs:comment>Notes made by students.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Subject -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Subject">
+        <rdfs:comment>The thing that is being discussed, considered, or studied.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Subject_Relation -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Subject_Relation">
+        <rdfs:comment>Link between a student and the materials of a subject.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Teacher -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Teacher">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Person"/>
+        <rdfs:comment>Person whose job is to teach in a school or college.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Teacher_Notes -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Teacher_Notes">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Notes"/>
+        <rdfs:comment>Notes made by teachers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Thesis -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Thesis">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Publication"/>
+        <rdfs:comment>A long piece of writing on a particular subject, especially one that is done for a higher college or university degree.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Undergraduate_Course -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Undergraduate_Course">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Course"/>
+        <rdfs:comment>Courses belonging to bachelor&apos;s degrees.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Undergraduate_Student -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Undergraduate_Student">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Student"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost/Institute#ugStudent"/>
+                <owl:someValuesFrom rdf:resource="http://localhost/Institute#Undergraduate_Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Student that has yet to obtain a degree.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Undergraduate_Subject -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Undergraduate_Subject">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Subject"/>
+        <rdfs:comment>Subject studied on an undergraduate course.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Videos -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Videos">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Material"/>
+        <rdfs:comment>A recording of moving pictures and sound, especially as a digital file, DVD, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Web_app -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Web_app">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Website"/>
+        <rdfs:comment>An application that you can use on the internet rather than having to download it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#Website -->
+
+    <owl:Class rdf:about="http://localhost/Institute#Website">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Material"/>
+        <rdfs:comment>A set of pages of information on the internet about a particular subject, published by a single person or organization.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost/Institute#WorkshopArticle -->
+
+    <owl:Class rdf:about="http://localhost/Institute#WorkshopArticle">
+        <rdfs:subClassOf rdf:resource="http://localhost/Institute#Article"/>
+        <rdfs:comment>An article made a workshop.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
